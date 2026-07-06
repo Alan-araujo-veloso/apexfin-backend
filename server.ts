@@ -16,7 +16,7 @@ if (!databaseUri) {
 }
 
 mongoose.connect(databaseUri)
-.then(() => console.log(' 🔥Conectado com sucesso ao MongoLocal!'))
+.then(() => console.log(' 🔥Conectado com sucesso ao MongoDB Atlas!'))
 .catch((err: any) => console.error('Erro de conexão com o MongoDB:', err));
 
 const TransactionsSchema = new mongoose.Schema({
