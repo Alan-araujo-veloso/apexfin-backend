@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const MONGO_URI = 'mongodb://localhost:27017/apexfin';
+const MONGO_URI = 'mongodb+srv://admin:qwe123@cluster0.l2mgk4h.mongodb.net/barbearia?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(MONGO_URI)
 .then(() => console.log(' 🔥Conectado com sucesso ao MongoLocal!'))
