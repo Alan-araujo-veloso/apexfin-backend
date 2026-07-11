@@ -49,7 +49,7 @@ const TransactionsSchema = new mongoose.Schema({
         res.status(400).json({ message: 'Erro ao salvar dados.' });
         }});
     
-app.delete('/api/transactions:/id', async (req: any, res: any) =>{
+app.delete('/api/transactions/:id', async (req: any, res: any) =>{
     try {
     const { id } = req.params;
 

@@ -43,7 +43,7 @@ app.post('/api/transactions', async (req, res) => {
         res.status(400).json({ message: 'Erro ao salvar dados.' });
     }
 });
-app.delete('/api/transactions:/id', async (req, res) => {
+app.delete('/api/transactions/:id', async (req, res) => {
     try {
         const { id } = req.params;
         const deletedTransaction = await TransactionModel.findByIdAndDelete(id);
