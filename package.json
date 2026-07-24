@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo 'Build skipped'",
+    "build": "npm install",
     "start": "node ./node_modules/tsx/dist/cli.mjs src/server.ts"
   },
   "keywords": [],
