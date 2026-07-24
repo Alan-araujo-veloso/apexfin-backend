@@ -6,6 +6,7 @@ import authRoutes from './routes/authRoutes.js';
 import transactionRoutes from './routes/transactionRoutes.js';
 import jwt from 'jsonwebtoken';
 
+const PORT = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -23,6 +24,6 @@ mongoose.connect(databaseUri)
 .then(() => console.log(' 🔥Conectado com sucesso ao MongoDB Atlas!'))
 .catch((err: any) => console.error('Erro de conexão com o MongoDB:', err));
 
-        app.listen(5000, () => {
-            console.log('🚀 API escutando redondo na porta 5000');
+        app.listen(Number(PORT), '0.0.0.0', () => {
+            console.log('🚀 API escutando redondo na porta ${PORT}');
         });
