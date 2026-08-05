@@ -25,5 +25,5 @@ mongoose.connect(databaseUri)
 .catch((err: any) => console.error('Erro de conexão com o MongoDB:', err));
 
         app.listen(Number(PORT), '0.0.0.0', () => {
-            console.log('🚀 API escutando redondo na porta ${PORT}');
+            console.log(`🚀 API escutando redondo na porta ${PORT}`);
         });

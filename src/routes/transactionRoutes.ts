@@ -50,4 +50,24 @@ userId: req.userId
 res.status(500).json({ message: 'Error ao deletar transação.', error});
         }
     });
+
+    router.put('/:id', authMiddleware, async (req: AuthRequest, res) => {
+        try {
+            const transactionId = req.params.id;
+            const { description, amount, type } = req.body;
+
+            const updateTransaction = await Transaction.findOneAndUpdate(
+                {_id: transactionId, userId: req.userId },
+                { description, amount, type },
+                { new: true } 
+            );
+
+            if (!updateTransaction) {
+                return res.status(404).json({message: 'Transação não encontrada ou permição negada.' });
+            }
+            res.status(200).json({message: 'Transação atualizada com sucesso!', updateTransaction });
+        } catch (error) {
+            res.status(500).json({message: 'Erro ao atualizar transação.', error });
+        }
+    });
     export default router;
